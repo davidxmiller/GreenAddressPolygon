@@ -9,6 +9,6 @@ export default defineConfig({
 	// Using include in optimizeDeps forces listed packages to be included in the pre-bundling step,
 	// which can help avoid this issue.
 	optimizeDeps: {
-		include: ['leaflet']
+		include: ['leaflet', 'leaflet-draw']
 	}	
 });
