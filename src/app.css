@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 
-html, body, #svelte {
-	height: 100%;
-	margin: 0;
+html,
+body,
+#svelte {
+  height: 100%;
+  margin: 0;
 }
 body {
-	overflow: hidden; /* prevent scrollbars for full-screen map */
+  overflow: hidden; /* prevent scrollbars for full-screen map */
 }

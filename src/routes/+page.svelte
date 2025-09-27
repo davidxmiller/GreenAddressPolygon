@@ -15,7 +15,8 @@
       zoom: 13
     });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     const drawnItems = new L.FeatureGroup();
@@ -25,7 +26,7 @@
       draw: {
         polygon: {
           allowIntersection: true,
-          shapeOptions: { color: '#1d4ed8', weight: 3 },
+          shapeOptions: { color: '#1d4ed8', weight: 3 }
         },
         marker: false,
         polyline: false,
@@ -39,6 +40,13 @@
       }
     });
     map.addControl(drawControl);
+
+    map.on('draw:drawstart', (e: any) => {
+      // For simple usage of the app, only allow drawing one polygon at a time
+      if (e.layerType === 'polygon') {
+        drawnItems.clearLayers();
+      }
+    });
 
     map.on('draw:created', (e: any) => {
       const { layer } = e;
@@ -71,5 +79,7 @@
     position: fixed;
     inset: 0;
   }
-  :global(.leaflet-control) { z-index: 1000; }
+  :global(.leaflet-control) {
+    z-index: 1000;
+  }
 </style>

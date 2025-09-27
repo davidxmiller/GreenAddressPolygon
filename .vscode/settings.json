@@ -1,6 +1,7 @@
 {
-    "cSpell.words": [
-        "circlemarker",
-        "Lngs"
-    ]
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": ["circlemarker", "Stylesheet", "drawstart", "Lngs"]
 }
